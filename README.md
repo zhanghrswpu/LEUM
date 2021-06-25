@@ -1,5 +1,5 @@
 # LEUM
-**MGBR Estimation
+**MGBR Estimation**
 
 The MGBR estimation process can be divided into 2 steps.
 
