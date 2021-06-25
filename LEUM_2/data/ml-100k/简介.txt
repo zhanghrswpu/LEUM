@@ -1,0 +1,58 @@
+各文件含义如下：
+
+allbut.pl   --生成训练和测试集的脚本，其中除了n个用户评分之外，所有训练和测试集都在训练数据中。
+
+mku.sh    --从u.data数据集生成的所有用户的shell脚本。
+
+u.data      -- 由943个用户对1682个电影的10000条评分组成。每个用户至少评分20部电影。用户和电影从1号开始连续编号。数据是随机排序的。
+
+                    标签分隔列表：user id | item id | rating | timestamp
+
+u.genre    --类型列表。
+
+u.info       --u.data数据集中的用户数，电影数和评分数。
+
+u.item      --电影信息。标签分隔列表：movie id | movie title | release date | video release date | IMDb URL | 
+
+                   unknown | Action | Adventure | Animation | Children's | Comedy | Crime | Documentary | Drama | 
+
+                   Fantasy | Film-Noir | Horror | Musical | Mystery | Romance | Sci-Fi | Thriller | War | Western
+
+                   最后19个字段是流派，1表示电影是该类型，0表示不是；电影可以同时使用几种流派。
+
+                   电影id和u.data数据集中的id是一致的。
+
+u.occupation    --职业列表。
+
+u.user      --用户的人口统计信息。标签分隔列表：user id | age | gender | occupation | zip code
+
+                  用户id和u.data数据集中的id是一致的。
+
+u1.base   --数据集u1.base / u1.test到u5.base / u5.test都是将u.data数据集按照80% / 20%的比例分割的训练集和测试集。
+
+u1.test      u1,...,u5有互不相交的测试集；如果是5次交叉验证，那么你可以在每个训练和测试集中重复实验，平均结果。
+
+u2.base     这些数据集可以通过mku.sh从u.data生成
+
+u2.test
+
+u3.base
+
+u3.test
+
+u4.base
+
+u4.test
+
+u5.base
+
+u5.test
+
+ua.base    --数据集ua.base, ua.test, ub.base, ub.test将u.data数据集分为训练集和测试集，每个用户在测试集中具有10个评分。
+
+ua.test        ua.test和ub.test是不相交的。这些数据集可以通过mku.sh从u.data生成
+
+
+ub.base
+
+ub.test
